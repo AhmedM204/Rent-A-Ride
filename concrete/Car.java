@@ -1,7 +1,15 @@
 package ProjectPhase1.concrete;
 
 public class Car extends Vehicle {
-    public boolean isLuxuryCar = false;
+    private boolean isLuxuryCar = false;
+
+    public boolean isLuxuryCar() {
+        return isLuxuryCar;
+    }
+
+    public void setLuxuryCar(boolean isLuxuryCar) {
+        this.isLuxuryCar = isLuxuryCar;
+    }
 
     public Car(int vehicleId, String make, float baseDailyRate) {
         super(vehicleId, make, baseDailyRate);
