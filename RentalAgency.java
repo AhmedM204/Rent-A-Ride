@@ -1,10 +1,9 @@
-package ProjectPhase1;
 
-import ProjectPhase1.concrete.Car;
-import ProjectPhase1.concrete.Customer;
-import ProjectPhase1.concrete.Motorbike;
-import ProjectPhase1.concrete.Truck;
-import ProjectPhase1.concrete.Vehicle;
+import concrete.Car;
+import concrete.Customer;
+import concrete.Motorbike;
+import concrete.Truck;
+import concrete.Vehicle;
 
 public class RentalAgency {
     public static void main(String[] args) {

@@ -1,9 +1,9 @@
+package concrete;
+
 /*
  * Name: Abdulrahman Nahshal
  * ID: 452033303
  */
-
-package ProjectPhase1.concrete;
 
 public class Customer {
     private int id;

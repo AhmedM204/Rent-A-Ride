@@ -3,7 +3,7 @@
  * ID: 452033303
  */
 
-package ProjectPhase1.concrete;
+package concrete;
 
 public class Motorbike extends Vehicle {
     public Motorbike(int vehicleId, String make, float baseDailyRate) {

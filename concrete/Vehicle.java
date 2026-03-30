@@ -1,4 +1,4 @@
-package ProjectPhase1.concrete;
+package concrete;
 
 public class Vehicle {
     private int vehicleId;

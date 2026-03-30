@@ -3,7 +3,7 @@
  * ID: 452033303
  */
 
-package ProjectPhase1.concrete;
+package concrete;
 
 public class Truck extends Vehicle {
     private final float loadCapacity; // In tons.
