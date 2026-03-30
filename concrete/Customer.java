@@ -1,11 +1,11 @@
 package ProjectPhase1.concrete;
 
 public class Customer {
-    private int customerID;
+    private int id;
     private String name;
 
     public Customer(int id, String name) {
-        this.customerID = id;
+        this.id = id;
         this.name = name;
     }
 
@@ -17,11 +17,11 @@ public class Customer {
         this.name = name;
     }
 
-    public int getCustomerID() {
-        return customerID;
+    public int getID() {
+        return id;
     }
 
-    public void setCustomerID(int customerID) {
-        this.customerID = customerID;
+    public void setID(int id) {
+        this.id = id;
     }
 }
