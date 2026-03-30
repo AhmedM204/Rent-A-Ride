@@ -11,8 +11,8 @@ public class Motorbike extends Vehicle {
     }
 
     @Override
-    public float getBaseDailyRate() {
+    public float calculateRentalCost(int days) {
         float rate = super.getBaseDailyRate() - 10f;
-        return rate < 0 ? 0 : rate;
+        return rate < 0 ? 0 : rate * days;
     }
 }

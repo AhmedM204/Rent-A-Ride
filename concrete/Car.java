@@ -21,12 +21,11 @@ public class Car extends Vehicle {
     }
 
     @Override
-    public float getBaseDailyRate() {
-        if (isLuxuryCar) {
-            return super.getBaseDailyRate() + 50;
-        } else {
-            return super.getBaseDailyRate();
-        }
+    public float calculateRentalCost(int days) {
+        if (isLuxuryCar)
+            return (baseDailyRate + 50) * days;
+
+        return super.calculateRentalCost(days);
     }
 
 }

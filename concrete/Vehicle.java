@@ -21,7 +21,11 @@ public class Vehicle {
         this.make = make;
     }
 
-    private float baseDailyRate;
+    protected float baseDailyRate;
+
+    public float getBaseDailyRate() {
+        return baseDailyRate;
+    }
 
     public void setBaseDailyRate(float baseDailyRate) {
         this.baseDailyRate = baseDailyRate;
@@ -33,7 +37,8 @@ public class Vehicle {
         this.baseDailyRate = baseDailyRate;
     }
 
-    public float getBaseDailyRate() {
-        return baseDailyRate;
+    public float calculateRentalCost(int days) {
+        return days * baseDailyRate;
     }
+
 }

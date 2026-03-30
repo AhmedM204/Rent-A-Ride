@@ -14,7 +14,7 @@ public class Truck extends Vehicle {
     }
 
     @Override
-    public float getBaseDailyRate() {
-        return super.getBaseDailyRate() + (this.loadCapacity * 20f);
+    public float calculateRentalCost(int days) {
+        return super.calculateRentalCost(days) + (this.loadCapacity * 20f);
     }
 }
