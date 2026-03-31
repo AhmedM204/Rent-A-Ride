@@ -90,7 +90,6 @@ public class RentalAgency {
         float cost = vehicle.calculateRentalCost(days);
         System.out.println("Customer: " + customer.getName());
         vehicle.printVehicleDetails(days);
-        System.out.println("---------------------------");
     }
 
 }
