@@ -3,6 +3,7 @@
 Name: Ahmed Bakri
 ID: 452045303
 */
+import java.util.Scanner;
 import concrete.Car;
 import concrete.Customer;
 import concrete.Motorbike;
@@ -11,26 +12,39 @@ import concrete.Vehicle;
 
 public class RentalAgency {
     public static void main(String[] args) {
-
+        Scanner in = new Scanner(System.in);
         Vehicle[] vehicles = new Vehicle[4];
+        Customer[] customers = new Customer[2];
 
         vehicles[0] = new Car(1, "Toyota", 100);
         vehicles[1] = new Car(2, "BMW", 200, true);
         vehicles[2] = new Truck(3, "Ford", 150, 3);
         vehicles[3] = new Motorbike(4, "Yamaha", 50);
 
-        Customer customer = new Customer(1, "Ahmed");
+        customers[0] = new Customer(1, "Ahmed");
+        customers[1] = new Customer(2, "Abdulrahman");
 
-        int days = 3;
-        System.out.println("Rental Summary for " + customer.getName() + " for " + days + " days:");
-        System.out.println("---------------------------");
-        for (Vehicle v : vehicles) {
-            float cost = v.calculateRentalCost(days);
-            System.out.println("Customer: " + customer.getName());
-            System.out.println("Vehicle ID: " + v.getVehicleId());
-            System.out.println("Make: " + v.getMake());
-            System.out.println("Total Cost for " + days + " days: " + cost);
-            System.out.println("---------------------------");
+        while(true) {
+            printCustomers(customers);
+            int customerSelection = readNumber("Select a customer: ");
+            printVehicles(vehicles);
+            int vehicleSelection = readVechicles(vehicles.length);
+            int daysSelection = readDays();
+            printCustomerVehicleInfo(customers[customerSelection], vehicles[vehicleSelection], daysSelection);
+            System.out.print("\n\n\n");
+        }
+
+
+    }
+    private static void printCustomers(Customer[] customers) {
+        for(int i = 0; i < customers.length; i++) {
+            System.out.println((i+1) + " - " + customers[i].getName());
+        }
+    }
+
+    private static void printVehicles(Vehicle[] vehicles) {
+        for(int i = 0; i < vehicles.length; i++) {
+            System.out.println((i+1) + " - " + vehicles[i].getMake() + " - $" + vehicles[i].getBaseDailyRate());
         }
     }
 
