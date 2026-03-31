@@ -63,7 +63,6 @@ public class RentalAgency {
                 scanner.next();
             }
         }
-        scanner.close();
 
         return number;
     }
