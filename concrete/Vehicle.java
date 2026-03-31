@@ -45,4 +45,12 @@ public class Vehicle {
         return days * baseDailyRate;
     }
 
+    public void printVehicleDetails(int days) {
+        float cost = calculateRentalCost(days);
+        System.out.println("Vehicle ID: " + getVehicleId());
+        System.out.println("Make: " + getMake());
+        System.out.println("Total Cost for " + days + " days: " + cost);
+        System.out.println("---------------------------");
+    }
+
 }
