@@ -11,8 +11,9 @@ import concrete.Truck;
 import concrete.Vehicle;
 
 public class RentalAgency {
+    private static java.util.Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
         Vehicle[] vehicles = new Vehicle[4];
         Customer[] customers = new Customer[2];
 
@@ -24,7 +25,7 @@ public class RentalAgency {
         customers[0] = new Customer(1, "Ahmed");
         customers[1] = new Customer(2, "Abdulrahman");
 
-        while(true) {
+        while (true) {
             printCustomers(customers);
             int customerSelection = readNumber("Select a customer: ");
             printVehicles(vehicles);
@@ -34,22 +35,21 @@ public class RentalAgency {
             System.out.print("\n\n\n");
         }
 
-
     }
+
     private static void printCustomers(Customer[] customers) {
-        for(int i = 0; i < customers.length; i++) {
-            System.out.println((i+1) + " - " + customers[i].getName());
+        for (int i = 0; i < customers.length; i++) {
+            System.out.println((i + 1) + " - " + customers[i].getName());
         }
     }
 
     private static void printVehicles(Vehicle[] vehicles) {
-        for(int i = 0; i < vehicles.length; i++) {
-            System.out.println((i+1) + " - " + vehicles[i].getMake() + " - $" + vehicles[i].getBaseDailyRate());
+        for (int i = 0; i < vehicles.length; i++) {
+            System.out.println((i + 1) + " - " + vehicles[i].getMake() + " - $" + vehicles[i].getBaseDailyRate());
         }
     }
 
     private static int readNumber(String message) {
-        java.util.Scanner scanner = new java.util.Scanner(System.in);
         int number = 0;
         boolean validInput = false;
 
