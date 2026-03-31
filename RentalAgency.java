@@ -54,6 +54,24 @@ public class RentalAgency {
         return number;
     }
 
+    private static int readDays() {
+        int days = readNumber();
+        while (days < 1) {
+            System.out.println("Invalid input. Please enter a number greater than 0.");
+            days = readNumber();
+        }
+        return days;
+    }
+
+    private static int readVechicles(int numberOfVehicles) {
+        int vehicleId = readNumber();
+        while (vehicleId < 1 || vehicleId > numberOfVehicles) {
+            System.out.println("Invalid input. Please enter a number between 1 and " + numberOfVehicles + ".");
+            vehicleId = readNumber();
+        }
+        return vehicleId;
+    }
+
     private static void printCustomerVehicleInfo(Customer customer, Vehicle vehicle, int days) {
         System.out.println("Rental Summary for " + customer.getName() + " for " + days + " days:");
         float cost = vehicle.calculateRentalCost(days);
