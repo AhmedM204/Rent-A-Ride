@@ -31,7 +31,7 @@ public class RentalAgency {
             printVehicles(vehicles);
             int vehicleSelection = readVechicles(vehicles.length);
             int daysSelection = readDays();
-            printCustomerVehicleInfo(customers[customerSelection], vehicles[vehicleSelection], daysSelection);
+            printCustomerVehicleInfo(customers[customerSelection - 1], vehicles[vehicleSelection - 1], daysSelection);
             System.out.print("\n\n\n");
         }
 
