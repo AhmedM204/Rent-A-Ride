@@ -34,6 +34,26 @@ public class RentalAgency {
         }
     }
 
+    private static int readNumber() {
+        java.util.Scanner scanner = new java.util.Scanner(System.in);
+        int number = 0;
+        boolean validInput = false;
+
+        while (!validInput) {
+            System.out.print("Enter a number: ");
+            if (scanner.hasNextInt()) {
+                number = scanner.nextInt();
+                validInput = true;
+            } else {
+                System.out.println("Invalid input. Please enter a valid integer.");
+                scanner.next();
+            }
+        }
+        scanner.close();
+
+        return number;
+    }
+
     private static void printCustomerVehicleInfo(Customer customer, Vehicle vehicle, int days) {
         System.out.println("Rental Summary for " + customer.getName() + " for " + days + " days:");
         float cost = vehicle.calculateRentalCost(days);
@@ -43,4 +63,5 @@ public class RentalAgency {
         System.out.println("Total Cost for " + days + " days: " + cost);
         System.out.println("---------------------------");
     }
+
 }
