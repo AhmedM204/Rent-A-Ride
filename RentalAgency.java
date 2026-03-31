@@ -33,4 +33,14 @@ public class RentalAgency {
             System.out.println("---------------------------");
         }
     }
+
+    private static void printCustomerVehicleInfo(Customer customer, Vehicle vehicle, int days) {
+        System.out.println("Rental Summary for " + customer.getName() + " for " + days + " days:");
+        float cost = vehicle.calculateRentalCost(days);
+        System.out.println("Customer: " + customer.getName());
+        System.out.println("Vehicle ID: " + vehicle.getVehicleId());
+        System.out.println("Make: " + vehicle.getMake());
+        System.out.println("Total Cost for " + days + " days: " + cost);
+        System.out.println("---------------------------");
+    }
 }
