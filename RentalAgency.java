@@ -34,13 +34,13 @@ public class RentalAgency {
         }
     }
 
-    private static int readNumber() {
+    private static int readNumber(String message) {
         java.util.Scanner scanner = new java.util.Scanner(System.in);
         int number = 0;
         boolean validInput = false;
 
         while (!validInput) {
-            System.out.print("Enter a number: ");
+            System.out.print(message);
             if (scanner.hasNextInt()) {
                 number = scanner.nextInt();
                 validInput = true;
@@ -55,19 +55,19 @@ public class RentalAgency {
     }
 
     private static int readDays() {
-        int days = readNumber();
+        int days = readNumber("Enter the number of days for rental: ");
         while (days < 1) {
             System.out.println("Invalid input. Please enter a number greater than 0.");
-            days = readNumber();
+            days = readNumber("Enter the number of days for rental: ");
         }
         return days;
     }
 
     private static int readVechicles(int numberOfVehicles) {
-        int vehicleId = readNumber();
+        int vehicleId = readNumber("Enter the vehicle ID: ");
         while (vehicleId < 1 || vehicleId > numberOfVehicles) {
             System.out.println("Invalid input. Please enter a number between 1 and " + numberOfVehicles + ".");
-            vehicleId = readNumber();
+            vehicleId = readNumber("Enter the vehicle ID: ");
         }
         return vehicleId;
     }
