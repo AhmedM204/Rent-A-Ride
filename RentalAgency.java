@@ -87,7 +87,6 @@ public class RentalAgency {
 
     private static void printCustomerVehicleInfo(Customer customer, Vehicle vehicle, int days) {
         System.out.println("Rental Summary for " + customer.getName() + " for " + days + " days:");
-        float cost = vehicle.calculateRentalCost(days);
         System.out.println("Customer: " + customer.getName());
         vehicle.printVehicleDetails(days);
     }
