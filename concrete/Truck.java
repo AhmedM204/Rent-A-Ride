@@ -6,11 +6,23 @@
 package concrete;
 
 public class Truck extends Vehicle {
-    private final float loadCapacity; // In tons.
+    private float loadCapacity; // In tons.
 
     public Truck(int vehicleId, String make, float baseDailyRate, float loadCapacity) {
         super(vehicleId, make, baseDailyRate);
-        this.loadCapacity = loadCapacity;
+        this.setLoadCapacity(loadCapacity);
+    }
+
+    public float getLoadCapacity() {
+        return loadCapacity;
+    }
+
+    public void setLoadCapacity(float loadCapacity) {
+        if(loadCapacity > 0) {
+            this.loadCapacity = loadCapacity;
+        } else {
+            this.loadCapacity = 1;
+        }
     }
 
     @Override
