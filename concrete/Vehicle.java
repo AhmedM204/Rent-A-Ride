@@ -4,7 +4,7 @@ ID: 452045303
 */
 package concrete;
 
-public class Vehicle {
+public abstract class Vehicle {
     private int vehicleId;
 
     public int getVehicleId() {
