@@ -5,7 +5,9 @@
 
 package concrete;
 
-public class Truck extends Vehicle {
+import concrete.interfaces.Maintainable;
+
+public class Truck extends Vehicle implements Maintainable {
     private float loadCapacity; // In tons.
 
     public Truck(int vehicleId, String make, float baseDailyRate, float loadCapacity) {
@@ -28,5 +30,11 @@ public class Truck extends Vehicle {
     @Override
     public float calculateRentalCost(int days) {
         return (baseDailyRate + (this.loadCapacity * 20f)) * days;
+    }
+
+    @Override
+    public void performMaintenance() {
+        System.out.println("Checking hydraulic system on the truck..");
+        System.out.println("Seems good to go!");
     }
 }
