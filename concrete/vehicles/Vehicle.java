@@ -37,14 +37,23 @@ public abstract class Vehicle {
         this.baseDailyRate = baseDailyRate;
     }
 
+    public boolean isAvailable = true;
+
     public Vehicle(int vehicleId, String make, float baseDailyRate) {
         this.vehicleId = vehicleId;
         this.make = make;
         this.baseDailyRate = baseDailyRate;
     }
 
+    public Vehicle(int vehicleId, String make, float baseDailyRate, boolean isAvailable) {
+        this.vehicleId = vehicleId;
+        this.make = make;
+        this.baseDailyRate = baseDailyRate;
+        this.isAvailable = isAvailable;
+    }
+
     public float calculateRentalCost(int days) throws InvalidRentalDaysException {
-        if(days < 1) {
+        if (days < 1) {
             throw new InvalidRentalDaysException("Days must be greater than 0.");
         }
         return days * baseDailyRate;
