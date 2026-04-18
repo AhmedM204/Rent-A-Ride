@@ -3,7 +3,7 @@
  * ID: 452033303
  */
 
-package concrete;
+package concrete.vehicles;
 
 import concrete.interfaces.Maintainable;
 

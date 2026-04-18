@@ -2,7 +2,7 @@
 Name: Ahmed Bakri
 ID: 452045303
 */
-package concrete;
+package concrete.vehicles;
 
 public abstract class Vehicle {
     private int vehicleId;

@@ -8,11 +8,12 @@ ID: 452045303
  */
 
 import java.util.Scanner;
-import concrete.Car;
+
 import concrete.Customer;
-import concrete.Motorbike;
-import concrete.Truck;
-import concrete.Vehicle;
+import concrete.vehicles.Car;
+import concrete.vehicles.Motorbike;
+import concrete.vehicles.Truck;
+import concrete.vehicles.Vehicle;
 
 public class RentalAgency {
     private static java.util.Scanner scanner = new Scanner(System.in);
