@@ -4,6 +4,8 @@ ID: 452045303
 */
 package concrete.vehicles;
 
+import concrete.exceptions.InvalidRentalDaysException;
+
 public abstract class Vehicle {
     private int vehicleId;
 
@@ -41,7 +43,10 @@ public abstract class Vehicle {
         this.baseDailyRate = baseDailyRate;
     }
 
-    public float calculateRentalCost(int days) {
+    public float calculateRentalCost(int days) throws InvalidRentalDaysException {
+        if(days < 1) {
+            throw new InvalidRentalDaysException("Days must be greater than 0.");
+        }
         return days * baseDailyRate;
     }
 
