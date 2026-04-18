@@ -4,7 +4,9 @@ ID: 452045303
 */
 package concrete;
 
-public class Car extends Vehicle {
+import concrete.interfaces.Maintainable;
+
+public class Car extends Vehicle  implements Maintainable{
     private boolean isLuxuryCar = false;
 
     public boolean isLuxuryCar() {
@@ -30,6 +32,12 @@ public class Car extends Vehicle {
             return (baseDailyRate + 50) * days;
 
         return super.calculateRentalCost(days);
+    }
+
+    @Override
+    public void performMaintenance() {
+        System.out.println("Checking the car's engine...");
+        System.out.println("it's done!");
     }
 
 }
