@@ -37,13 +37,7 @@ public abstract class Vehicle {
         this.baseDailyRate = baseDailyRate;
     }
 
-    public boolean isAvailable = true;
-
-    public Vehicle(int vehicleId, String make, float baseDailyRate) {
-        this.vehicleId = vehicleId;
-        this.make = make;
-        this.baseDailyRate = baseDailyRate;
-    }
+    public boolean isAvailable;
 
     public Vehicle(int vehicleId, String make, float baseDailyRate, boolean isAvailable) {
         this.vehicleId = vehicleId;

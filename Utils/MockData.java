@@ -10,10 +10,10 @@ public class MockData {
     public static Vehicle[] getVehicles() {
 
         Vehicle[] vehicles = new Vehicle[4];
-        vehicles[0] = new Car(1, "Toyota", 100);
-        vehicles[1] = new Car(2, "BMW", 200, true);
-        vehicles[2] = new Truck(3, "Ford", 150, 3);
-        vehicles[3] = new Motorbike(4, "Yamaha", 50);
+        vehicles[0] = new Car(1, "Toyota", 100, true);
+        vehicles[1] = new Car(2, "BMW", 200, true, false);
+        vehicles[2] = new Truck(3, "Ford", 150, 3, true);
+        vehicles[3] = new Motorbike(4, "Yamaha", 50, true);
         return vehicles;
     }
 

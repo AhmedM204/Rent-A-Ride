@@ -10,8 +10,8 @@ import concrete.interfaces.Maintainable;
 public class Truck extends Vehicle implements Maintainable {
     private float loadCapacity; // In tons.
 
-    public Truck(int vehicleId, String make, float baseDailyRate, float loadCapacity) {
-        super(vehicleId, make, baseDailyRate);
+    public Truck(int vehicleId, String make, float baseDailyRate, float loadCapacity, boolean isAvailable) {
+        super(vehicleId, make, baseDailyRate, isAvailable);
         this.setLoadCapacity(loadCapacity);
     }
 
@@ -20,7 +20,7 @@ public class Truck extends Vehicle implements Maintainable {
     }
 
     public void setLoadCapacity(float loadCapacity) {
-        if(loadCapacity > 0) {
+        if (loadCapacity > 0) {
             this.loadCapacity = loadCapacity;
         } else {
             this.loadCapacity = 1;

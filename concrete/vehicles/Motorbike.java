@@ -8,8 +8,8 @@ package concrete.vehicles;
 import concrete.interfaces.Maintainable;
 
 public class Motorbike extends Vehicle implements Maintainable {
-    public Motorbike(int vehicleId, String make, float baseDailyRate) {
-        super(vehicleId, make, baseDailyRate);
+    public Motorbike(int vehicleId, String make, float baseDailyRate, boolean isAvailable) {
+        super(vehicleId, make, baseDailyRate, isAvailable);
     }
 
     @Override

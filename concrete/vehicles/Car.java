@@ -6,7 +6,7 @@ package concrete.vehicles;
 
 import concrete.interfaces.Maintainable;
 
-public class Car extends Vehicle  implements Maintainable{
+public class Car extends Vehicle implements Maintainable {
     private boolean isLuxuryCar = false;
 
     public boolean isLuxuryCar() {
@@ -17,12 +17,12 @@ public class Car extends Vehicle  implements Maintainable{
         this.isLuxuryCar = isLuxuryCar;
     }
 
-    public Car(int vehicleId, String make, float baseDailyRate) {
-        super(vehicleId, make, baseDailyRate);
+    public Car(int vehicleId, String make, float baseDailyRate, boolean isAvailable) {
+        super(vehicleId, make, baseDailyRate, isAvailable);
     }
 
-    public Car(int vehicleId, String make, float baseDailyRate, boolean isLuxuryCar) {
-        super(vehicleId, make, baseDailyRate);
+    public Car(int vehicleId, String make, float baseDailyRate, boolean isLuxuryCar, boolean isAvailable) {
+        super(vehicleId, make, baseDailyRate, isAvailable);
         this.isLuxuryCar = isLuxuryCar;
     }
 
