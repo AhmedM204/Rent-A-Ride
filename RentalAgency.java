@@ -10,6 +10,7 @@ ID: 452045303
 import Utils.Helpers;
 import Utils.MockData;
 import concrete.Customer;
+import concrete.exceptions.InvalidRentalDaysException;
 import concrete.exceptions.VehicleNotAvailableException;
 import concrete.vehicles.Vehicle;
 
@@ -27,16 +28,19 @@ public class RentalAgency {
             int customerSelection = Helpers.readNumber("Select a customer: ");
             Helpers.printVehicles(vehicles);
             int vehicleSelection = Helpers.readVechicles(vehicles.length);
+            int daysSelection = Helpers.readDays();
             try {
-                if (!vehicles[vehicleSelection - 1].isAvailable)
-                    throw new VehicleNotAvailableException("Vehicle is not available for rental.");
+                Helpers.printCustomerVehicleInfo(customers[customerSelection - 1], vehicles[vehicleSelection - 1],
+                        daysSelection);
             } catch (VehicleNotAvailableException e) {
                 System.out.println(e.getMessage());
                 continue; // Skip the rest of the loop and start over
+            } catch (InvalidRentalDaysException e) {
+                System.out.println(e.getMessage());
+                continue;
             }
-            int daysSelection = Helpers.readDays();
-            Helpers.printCustomerVehicleInfo(customers[customerSelection - 1], vehicles[vehicleSelection - 1],
-                    daysSelection);
+
+
             System.out.print("\n\n\n");
         }
     }

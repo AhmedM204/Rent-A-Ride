@@ -3,6 +3,7 @@ package Utils;
 import java.util.Scanner;
 
 import concrete.Customer;
+import concrete.exceptions.VehicleNotAvailableException;
 import concrete.vehicles.Vehicle;
 
 public class Helpers {
@@ -40,10 +41,11 @@ public class Helpers {
 
     public static int readDays() {
         int days = readNumber("Enter the number of days for rental: ");
+        /* // Removed to let try catch do its job for demonstration purposes.
         while (days < 1) {
             System.out.println("Invalid input. Please enter a number greater than 0.");
             days = readNumber("Enter the number of days for rental: ");
-        }
+        }*/
         return days;
     }
 
@@ -56,9 +58,7 @@ public class Helpers {
         return vehicleId;
     }
 
-    public static void printCustomerVehicleInfo(Customer customer, Vehicle vehicle, int days) {
-        System.out.println("Rental Summary for " + customer.getName() + " for " + days + " days:");
-        System.out.println("Customer: " + customer.getName());
-        vehicle.printVehicleDetails(days);
+    public static void printCustomerVehicleInfo(Customer customer, Vehicle vehicle, int days) throws VehicleNotAvailableException {
+        vehicle.printVehicleDetails(customer, days);
     }
 }

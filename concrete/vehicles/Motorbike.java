@@ -5,6 +5,8 @@
 
 package concrete.vehicles;
 
+import concrete.exceptions.InvalidRentalDaysException;
+import concrete.exceptions.VehicleNotAvailableException;
 import concrete.interfaces.Maintainable;
 
 public class Motorbike extends Vehicle implements Maintainable {
@@ -13,7 +15,9 @@ public class Motorbike extends Vehicle implements Maintainable {
     }
 
     @Override
-    public float calculateRentalCost(int days) {
+    public float calculateRentalCost(int days) throws InvalidRentalDaysException, VehicleNotAvailableException {
+        checkAvailability();
+        checkDays(days);
         float rate = super.getBaseDailyRate() - 10f;
         return rate < 0 ? 0 : rate * days;
     }

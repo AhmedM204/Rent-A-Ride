@@ -4,7 +4,9 @@ ID: 452045303
 */
 package concrete.vehicles;
 
+import concrete.Customer;
 import concrete.exceptions.InvalidRentalDaysException;
+import concrete.exceptions.VehicleNotAvailableException;
 
 public abstract class Vehicle {
     private int vehicleId;
@@ -46,15 +48,25 @@ public abstract class Vehicle {
         this.isAvailable = isAvailable;
     }
 
-    public float calculateRentalCost(int days) throws InvalidRentalDaysException {
+    public void checkDays(int days) throws InvalidRentalDaysException {
         if (days < 1) {
             throw new InvalidRentalDaysException("Days must be greater than 0.");
         }
+    }
+
+    public void checkAvailability() throws VehicleNotAvailableException {
+        if(!isAvailable) throw new VehicleNotAvailableException("Vehicle is not available for rental.");
+    }
+
+    public float calculateRentalCost(int days) throws InvalidRentalDaysException, VehicleNotAvailableException {
+        checkAvailability();
+        checkDays(days);
         return days * baseDailyRate;
     }
 
-    public void printVehicleDetails(int days) {
+    public void printVehicleDetails(Customer customer, int days) throws VehicleNotAvailableException {
         float cost = calculateRentalCost(days);
+        System.out.println("Rental Summary for " + customer.getName() + " for " + days + " days:");
         System.out.println("Vehicle ID: " + getVehicleId());
         System.out.println("Make: " + getMake());
         System.out.println("Total Cost for " + days + " days: " + cost);
