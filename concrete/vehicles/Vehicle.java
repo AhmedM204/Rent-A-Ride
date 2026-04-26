@@ -39,7 +39,7 @@ public abstract class Vehicle {
         this.baseDailyRate = baseDailyRate;
     }
 
-    public boolean isAvailable;
+    private boolean isAvailable;
 
     public Vehicle(int vehicleId, String make, float baseDailyRate, boolean isAvailable) {
         this.vehicleId = vehicleId;
@@ -48,13 +48,13 @@ public abstract class Vehicle {
         this.isAvailable = isAvailable;
     }
 
-    public void checkDays(int days) throws InvalidRentalDaysException {
+    protected void checkDays(int days) throws InvalidRentalDaysException {
         if (days < 1) {
             throw new InvalidRentalDaysException("Days must be greater than 0.");
         }
     }
 
-    public void checkAvailability() throws VehicleNotAvailableException {
+    protected void checkAvailability() throws VehicleNotAvailableException {
         if(!isAvailable) throw new VehicleNotAvailableException("Vehicle is not available for rental.");
     }
 
